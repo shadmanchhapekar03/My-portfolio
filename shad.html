@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: white;
+            color: black;
+            font-size: 18px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .close-btn:hover {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Button to View Certificate -->
+<button class="btn" onclick="showCertificate()">View Certificate</button>
+
+<!-- Overlay for Fullscreen Image -->
+<div class="overlay" id="certificateOverlay">
+    <button class="close-btn" onclick="closeCertificate()">Close</button>
+    <img src="YOUR_CERTIFICATE_IMAGE_URL" alt="Certificate">
+</div>
+
+<script>
+    function showCertificate() {
+        document.getElementById('certificateOverlay').style.display = 'flex';
+    }
+
+    function closeCertificate() {
+        document.getElementById('certificateOverlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
